@@ -6,22 +6,23 @@ $(document).ready(function () {
         //Prevent navigation to image page
         e.preventDefault();
 
-        // Get the name of the city, removing all contiguous white spaces
-        var city = $("#city-type").val().replace(/\s+/g, '');
+        // Get the upper case name of the city, removing all contiguous white spaces
+        var city = $("#city-type").val().replace(/\s+/g, '').toUpperCase();
+        alert(city);
         
         //Clear the input
         $("#city-type").val("").attr("placeholder", "");
 
         //Add the image class depending on which of the allowed values has been entered
-        if (city == "NYC" || city == "NewYorkCity" || city == "NewYork") {
+        if (city == "NYC" || city == "NEWYORKCITY" || city == "NEWYORK") {
             $('body').removeClass().addClass("nyc");
-        } else if (city == "LA" || city == "LAX" || city == "LosAngeles") {
+        } else if (city == "LA" || city == "LAX" || city == "LOSANGELES") {
             $("body").removeClass().addClass("la");
-        } else if (city == "SF"||city=="Bay Area"||city=="SanFrancisco") {
+        } else if (city == "SF"||city=="BAYAREA"||city=="SANFRANCISCO") {
             $("body").removeClass().addClass("sf");
-        } else if (city == "ATX"||city=="Austin") {
+        } else if (city == "ATX"||city=="AUSTIN") {
             $("body").removeClass().addClass("austin");
-        } else if (city == "SYD"||city=="Sydney") {
+        } else if (city == "SYD"||city=="SYDNEY") {
             $("body").removeClass().addClass("sydney");
         } else {
             // None of the above.
