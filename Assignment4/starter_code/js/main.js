@@ -8,7 +8,6 @@ $(document).ready(function () {
 
         // Get the upper case name of the city, removing all contiguous white spaces
         var city = $("#city-type").val().replace(/\s+/g, '').toUpperCase();
-        alert(city);
         
         //Clear the input
         $("#city-type").val("").attr("placeholder", "");
